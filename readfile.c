@@ -21,7 +21,7 @@ void read_file(char *file, stack_t **stack)
 		printf("Error: Can't open file %s\n", file);
 		exit(1);
 	}
-	while((readline = getline(&line, &len, fp)) != -1)
+	while ((readline = getline(&line, &len, fp)) != -1)
 	{
 		opcode = strtok(line, delim);
 		num++;

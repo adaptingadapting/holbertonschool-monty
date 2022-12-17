@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * nop - doesnt do
+ * _nop - doesnt do
  * @stack: stack
  * @line: nope
  */
