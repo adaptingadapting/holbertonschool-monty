@@ -28,7 +28,7 @@ void checkifvalid(stack_t **stack, unsigned int line, char *op)
 		}
 	if (op && op[0] != '#')
 	{
-		fprintf(stderr, "L%u: unkown intruction %s\n", line, op);
+		fprintf(stderr, "L%u: unknown instruction %s\n", line, op);
 		exit(1);
 	}
 }
