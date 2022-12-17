@@ -1,18 +1,11 @@
 #ifndef MAIN
 #define MAIN
 
+#define delim "\n \t"
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-typedef struct formatFunctions
-{
-  char *specifier;
-  int (*f)(int n);
-} formatFunctions;
-
-int (*formatFunc(char *specifier))(int n);
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -29,6 +22,7 @@ typedef struct stack_s
   struct stack_s *prev;
   struct stack_s *next;
 } stack_t;
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -43,7 +37,16 @@ typedef struct instruction_s
   void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-int _pop(stack_t **stack, unsigned int line_number);
-int _push(stack_t **stack, unsigned int line_number);
-
+void checkifvalid(stack_t **stack, unsigned int l, char *op);
+void read_file(char *filename, stack_t **stack);
+void _pop(stack_t **stack, unsigned int line_number);
+void _push(stack_t **stack, unsigned int line_number);
+void _pint(stack_t **stack, unsigned int line_number);
+void _swap(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
+void (*formatFunc(char *specifier))(stack_t **stack, unsigned int n);
+int firstTokenCheck(char *token0);
+int secondCheck(char *token1);
+void _pall(stack_t **stack, unsigned int line_number);
 #endif
