@@ -13,7 +13,7 @@ void _add(stack_t **stack, unsigned int line)
 
 	if (!stack || !(*stack) || !(*stack)->next)
 	{
-		printf("L%u: can't add, stack too short\n", line);
+		fprintf(stderr, "L%u: can't add, stack too short\n", line);
 		exit(1);
 	}
 	node = *stack;
