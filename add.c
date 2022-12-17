@@ -3,7 +3,7 @@
 /**
  * _add - adds a node
  * @stack: stack
- * @line
+ * @line: linedadsad
  */
 
 void _add(stack_t **stack, unsigned int line)
