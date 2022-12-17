@@ -18,7 +18,7 @@ void read_file(char *file, stack_t **stack)
 	fp = fopen(file, "r");
 	if (!fp)
 	{
-		printf("Error: Can't open file %s\n", file);
+		fprintf(stderr, "Error: Can't open file %s\n", file);
 		exit(1);
 	}
 	while ((readline = getline(&line, &len, fp)) != -1)
